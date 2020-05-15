@@ -15,10 +15,12 @@
 
 <link rel="stylesheet" href="/resume/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/resume/lib/pace/pace-theme-minimal.min.css">
+  <script src="/resume/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yachuchang102.github.io","root":"/resume/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"yachuchang102.github.io","root":"/resume/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="website">
@@ -190,83 +192,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://yachuchang102.github.io/resume/2020/05/15/codenote-hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/resume/images/avatar.gif">
-      <meta itemprop="name" content="YC">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YC的隨手筆記">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/resume/2020/05/15/codenote-hexo/" class="post-title-link" itemprop="url">Hexo＋NexT主題建置筆記</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2020-05-15 00:00:00 / 修改時間：21:54:42" itemprop="dateCreated datePublished" datetime="2020-05-15T00:00:00+08:00">2020-05-15</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/resume/categories/%E5%89%8D%E7%AB%AF%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">前端筆記</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Hexo快速安裝"><a href="#Hexo快速安裝" class="headerlink" title="Hexo快速安裝"></a>Hexo快速安裝</h2><h5 id="確認一定要有Node-js的環境"><a href="#確認一定要有Node-js的環境" class="headerlink" title="確認一定要有Node.js的環境"></a>確認一定要有Node.js的環境</h5><h5 id="安裝Hexo-cli"><a href="#安裝Hexo-cli" class="headerlink" title="安裝Hexo-cli"></a>安裝Hexo-cli</h5><p>Mac要加sudo在前面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<h5 id="先建立一個資料夾，cd到那資料夾後，快速建立雛型"><a href="#先建立一個資料夾，cd到那資料夾後，快速建立雛型" class="headerlink" title="先建立一個資料夾，cd到那資料夾後，快速建立雛型"></a>先建立一個資料夾，cd到那資料夾後，快速建立雛型</h5>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/resume/2020/05/15/codenote-hexo/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
     <link itemprop="mainEntityOfPage" href="https://yachuchang102.github.io/resume/2020/05/15/codenote-test/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -316,6 +241,83 @@
 
       
           <h3 id="測試文"><a href="#測試文" class="headerlink" title="測試文"></a>測試文</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://yachuchang102.github.io/resume/2020/05/15/codenote-hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/resume/images/avatar.gif">
+      <meta itemprop="name" content="YC">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YC的隨手筆記">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/resume/2020/05/15/codenote-hexo/" class="post-title-link" itemprop="url">Hexo＋NexT主題建置筆記</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2020-05-15 00:00:00 / 修改時間：23:11:12" itemprop="dateCreated datePublished" datetime="2020-05-15T00:00:00+08:00">2020-05-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/resume/categories/%E5%89%8D%E7%AB%AF%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">前端筆記</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Hexo快速安裝"><a href="#Hexo快速安裝" class="headerlink" title="Hexo快速安裝"></a>Hexo快速安裝</h2><h5 id="確認一定要有Node-js的環境"><a href="#確認一定要有Node-js的環境" class="headerlink" title="確認一定要有Node.js的環境"></a>確認一定要有Node.js的環境</h5><h5 id="安裝Hexo-cli"><a href="#安裝Hexo-cli" class="headerlink" title="安裝Hexo-cli"></a>安裝Hexo-cli</h5><p>Mac要加sudo在前面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h5 id="先建立一個資料夾，cd到那資料夾後，快速建立雛型"><a href="#先建立一個資料夾，cd到那資料夾後，快速建立雛型" class="headerlink" title="先建立一個資料夾，cd到那資料夾後，快速建立雛型"></a>先建立一個資料夾，cd到那資料夾後，快速建立雛型</h5>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/resume/2020/05/15/codenote-hexo/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -414,6 +416,11 @@
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:yachuchang102@gmail.com" title="E-Mail → mailto:yachuchang102@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
 
 
 
@@ -468,12 +475,14 @@
 <script src="/resume/js/motion.js"></script>
 
 
-<script src="/resume/js/schemes/muse.js"></script>
+<script src="/resume/js/schemes/pisces.js"></script>
 
 
 <script src="/resume/js/next-boot.js"></script>
 
 
+  <script defer src="/resume/lib/three/three.min.js"></script>
+    <script defer src="/resume/lib/three/canvas_lines.min.js"></script>
 
 
   
