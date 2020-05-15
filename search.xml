@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>測試筆記</title>
-    <url>/resume/2020/05/15/codenote-test/</url>
-    <content><![CDATA[<h3 id="測試文"><a href="#測試文" class="headerlink" title="測試文"></a>測試文</h3>]]></content>
-      <categories>
-        <category>前端筆記</category>
-      </categories>
-      <tags>
-        <tag>程式筆記</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo＋NexT主題建置筆記</title>
     <url>/resume/2020/05/15/codenote-hexo/</url>
     <content><![CDATA[<h2 id="Hexo快速安裝"><a href="#Hexo快速安裝" class="headerlink" title="Hexo快速安裝"></a>Hexo快速安裝</h2><h5 id="確認一定要有Node-js的環境"><a href="#確認一定要有Node-js的環境" class="headerlink" title="確認一定要有Node.js的環境"></a>確認一定要有Node.js的環境</h5><h5 id="安裝Hexo-cli"><a href="#安裝Hexo-cli" class="headerlink" title="安裝Hexo-cli"></a>安裝Hexo-cli</h5><p>Mac要加sudo在前面</p>
@@ -130,6 +119,17 @@
       <tags>
         <tag>程式筆記</tag>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>測試筆記</title>
+    <url>/resume/2020/05/15/codenote-test/</url>
+    <content><![CDATA[<h3 id="測試文"><a href="#測試文" class="headerlink" title="測試文"></a>測試文</h3>]]></content>
+      <categories>
+        <category>前端筆記</category>
+      </categories>
+      <tags>
+        <tag>程式筆記</tag>
       </tags>
   </entry>
 </search>
