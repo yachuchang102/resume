@@ -14,23 +14,24 @@
 
 
 <link rel="stylesheet" href="/resume/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yachuchang102.github.io","root":"/resume/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"yachuchang102.github.io","root":"/resume/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Hexo快速安裝確認一定要有Node.js的環境安裝Hexo-cliMac要加sudo在前面 1npm install -g hexo-cli  先建立一個資料夾，cd到那資料夾後，快速建立雛型123hexo init &lt;folder&gt;cd &lt;folder&gt;npm install  folder名稱可有可無，不加就直接建構在當個資料夾上 用VScode打開看結構，文章都放在">
+  <meta name="description" content="Hexo快速安裝確認一定要有Node.js的環境安裝Hexo-cliMac要加sudo在前面 1npm install -g hexo-cli 先建立一個資料夾，cd到那資料夾後，快速建立雛型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo＋NexT主題建置筆記">
 <meta property="og:url" content="https://yachuchang102.github.io/resume/2020/05/15/codenote-hexo/index.html">
 <meta property="og:site_name" content="YC的隨手筆記">
-<meta property="og:description" content="Hexo快速安裝確認一定要有Node.js的環境安裝Hexo-cliMac要加sudo在前面 1npm install -g hexo-cli  先建立一個資料夾，cd到那資料夾後，快速建立雛型123hexo init &lt;folder&gt;cd &lt;folder&gt;npm install  folder名稱可有可無，不加就直接建構在當個資料夾上 用VScode打開看結構，文章都放在">
+<meta property="og:description" content="Hexo快速安裝確認一定要有Node.js的環境安裝Hexo-cliMac要加sudo在前面 1npm install -g hexo-cli 先建立一個資料夾，cd到那資料夾後，快速建立雛型">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://res.cloudinary.com/dfm2je8hf/image/upload/v1589523936/fixed_root_cfzf2t.png">
 <meta property="og:image" content="https://res.cloudinary.com/dfm2je8hf/image/upload/v1589512454/theme_next.png">
 <meta property="article:published_time" content="2020-05-14T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-05-15T09:39:15.245Z">
+<meta property="article:modified_time" content="2020-05-15T12:19:45.513Z">
 <meta property="article:author" content="YC">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://res.cloudinary.com/dfm2je8hf/image/upload/v1589523936/fixed_root_cfzf2t.png">
@@ -88,7 +89,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切換導航欄">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -117,27 +118,27 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/resume/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/resume/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/resume/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+    <a href="/resume/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/resume/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+    <a href="/resume/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/resume/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+    <a href="/resume/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/resume/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/resume/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
 
   </li>
   </ul>
@@ -189,16 +190,16 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="Created: 2020-05-15 00:00:00 / Modified: 17:39:15" itemprop="dateCreated datePublished" datetime="2020-05-15T00:00:00+08:00">2020-05-15</time>
+              <time title="創建時間：2020-05-15 00:00:00 / 修改時間：20:19:45" itemprop="dateCreated datePublished" datetime="2020-05-15T00:00:00+08:00">2020-05-15</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/resume/categories/%E5%89%8D%E7%AB%AF%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">前端筆記</span></a>
                 </span>
@@ -217,8 +218,8 @@
       
         <h2 id="Hexo快速安裝"><a href="#Hexo快速安裝" class="headerlink" title="Hexo快速安裝"></a>Hexo快速安裝</h2><h5 id="確認一定要有Node-js的環境"><a href="#確認一定要有Node-js的環境" class="headerlink" title="確認一定要有Node.js的環境"></a>確認一定要有Node.js的環境</h5><h5 id="安裝Hexo-cli"><a href="#安裝Hexo-cli" class="headerlink" title="安裝Hexo-cli"></a>安裝Hexo-cli</h5><p>Mac要加sudo在前面</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<h5 id="先建立一個資料夾，cd到那資料夾後，快速建立雛型"><a href="#先建立一個資料夾，cd到那資料夾後，快速建立雛型" class="headerlink" title="先建立一個資料夾，cd到那資料夾後，快速建立雛型"></a>先建立一個資料夾，cd到那資料夾後，快速建立雛型</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br><span class="line">cd &lt;folder&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<h5 id="先建立一個資料夾，cd到那資料夾後，快速建立雛型"><a href="#先建立一個資料夾，cd到那資料夾後，快速建立雛型" class="headerlink" title="先建立一個資料夾，cd到那資料夾後，快速建立雛型"></a>先建立一個資料夾，cd到那資料夾後，快速建立雛型</h5><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br><span class="line">cd &lt;folder&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
 
 <p>folder名稱可有可無，不加就直接建構在當個資料夾上</p>
 <p>用VScode打開看結構，文章都放在source/_posts資料夾內</p>
@@ -295,8 +296,12 @@
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;md文章可設置成</span><br><span class="line">---</span><br><span class="line">title: Hexo＋NexT主題建置筆記</span><br><span class="line">date: 2020-05-15</span><br><span class="line">tage:</span><br><span class="line">- 程式筆記</span><br><span class="line">- Hexo</span><br><span class="line">categories:</span><br><span class="line">- 前端筆記</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
+<h5 id="額外功能"><a href="#額外功能" class="headerlink" title="額外功能"></a>額外功能</h5><p><strong>顯示閱讀進度%</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;搜尋scrollpercent為true</span><br></pre></td></tr></table></figure>
 
-
+<p><strong>NexT中文化</strong></p>
+<p>到themes/next/language資料夾中，把<code>zh-Tw.yml</code>檔名改成<code>zh-tw.yml</code></p>
+<p>再到站點配置文件中language設成zh-tw</p>
 <h4 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h4><p><a href="[https://blog.typeart.cc/HEXO%E6%90%AD%E9%85%8D%E4%B8%BB%E9%A1%8Cnext%E5%9F%BA%E7%A4%8E%E9%85%8D%E7%BD%AE%E6%95%99%E5%AD%B8/](https://blog.typeart.cc/HEXO搭配主題next基礎配置教學/)">HEXO搭配主題next基礎配置教學</a></p>
 
     </div>
@@ -359,16 +364,16 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目錄
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          本站概要
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo快速安裝"><span class="nav-number">1.</span> <span class="nav-text">Hexo快速安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#確認一定要有Node-js的環境"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">確認一定要有Node.js的環境</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安裝Hexo-cli"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">安裝Hexo-cli</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#先建立一個資料夾，cd到那資料夾後，快速建立雛型"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">先建立一個資料夾，cd到那資料夾後，快速建立雛型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Run-Server-在本地端運行預覽-localhost-4000"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">Run Server 在本地端運行預覽 localhost:4000</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#儲存在github上，發佈GitHub-pages"><span class="nav-number">2.</span> <span class="nav-text">儲存在github上，發佈GitHub pages</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#github上面新增儲存庫"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">github上面新增儲存庫</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在此專案的terminal打上："><span class="nav-number">2.0.0.2.</span> <span class="nav-text">在此專案的terminal打上：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#push上去"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">push上去</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#部署到github"><span class="nav-number">2.0.0.4.</span> <span class="nav-text">部署到github</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝版型"><span class="nav-number">3.</span> <span class="nav-text">安裝版型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安裝NexT主題"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">安裝NexT主題</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#啟用主題"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">啟用主題</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#發布文章"><span class="nav-number">3.0.0.3.</span> <span class="nav-text">發布文章</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#新增tags-categories-archives-頁面"><span class="nav-number">3.0.0.4.</span> <span class="nav-text">新增tags, categories, archives 頁面</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#參考文章"><span class="nav-number">3.0.1.</span> <span class="nav-text">參考文章</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo快速安裝"><span class="nav-number">1.</span> <span class="nav-text">Hexo快速安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#確認一定要有Node-js的環境"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">確認一定要有Node.js的環境</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安裝Hexo-cli"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">安裝Hexo-cli</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#先建立一個資料夾，cd到那資料夾後，快速建立雛型"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">先建立一個資料夾，cd到那資料夾後，快速建立雛型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Run-Server-在本地端運行預覽-localhost-4000"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">Run Server 在本地端運行預覽 localhost:4000</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#儲存在github上，發佈GitHub-pages"><span class="nav-number">2.</span> <span class="nav-text">儲存在github上，發佈GitHub pages</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#github上面新增儲存庫"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">github上面新增儲存庫</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在此專案的terminal打上："><span class="nav-number">2.0.0.2.</span> <span class="nav-text">在此專案的terminal打上：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#push上去"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">push上去</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#部署到github"><span class="nav-number">2.0.0.4.</span> <span class="nav-text">部署到github</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝版型"><span class="nav-number">3.</span> <span class="nav-text">安裝版型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安裝NexT主題"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">安裝NexT主題</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#啟用主題"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">啟用主題</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#發布文章"><span class="nav-number">3.0.0.3.</span> <span class="nav-text">發布文章</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#新增tags-categories-archives-頁面"><span class="nav-number">3.0.0.4.</span> <span class="nav-text">新增tags, categories, archives 頁面</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#額外功能"><span class="nav-number">3.0.0.5.</span> <span class="nav-text">額外功能</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#參考文章"><span class="nav-number">3.0.1.</span> <span class="nav-text">參考文章</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -383,14 +388,14 @@
           <a href="/resume/archives/">
         
           <span class="site-state-item-count">1</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/resume/categories/">
           
         <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">categories</span></a>
+        <span class="site-state-item-name">分類</span></a>
       </div>
   </nav>
 </div>
@@ -422,8 +427,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">YC</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
-  </div>
 
         
 
@@ -440,6 +443,8 @@
 
   
   <script src="/resume/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="/resume/lib/velocity/velocity.min.js"></script>
   <script src="/resume/lib/velocity/velocity.ui.min.js"></script>
 
