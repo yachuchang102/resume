@@ -6,7 +6,7 @@
   <link href="/resume/atom.xml" rel="self"/>
   
   <link href="https://yachuchang102.github.io/resume/"/>
-  <updated>2020-05-15T15:11:12.487Z</updated>
+  <updated>2020-05-16T16:28:11.269Z</updated>
   <id>https://yachuchang102.github.io/resume/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>codenote-githubpages</title>
+    <link href="https://yachuchang102.github.io/resume/2020/05/16/codenote-githubpages/"/>
+    <id>https://yachuchang102.github.io/resume/2020/05/16/codenote-githubpages/</id>
+    <published>2020-05-16T14:45:25.000Z</published>
+    <updated>2020-05-16T16:28:11.269Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Vue-cli3專案部署到GitHub-Pages&quot;&gt;&lt;a href=&quot;#Vue-cli3專案部署到GitHub-Pages&quot; class=&quot;headerlink&quot; title=&quot;Vue-cli3專案部署到GitHub
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端筆記" scheme="https://yachuchang102.github.io/resume/categories/%E5%89%8D%E7%AB%AF%E7%AD%86%E8%A8%98/"/>
+    
+    
+      <category term="程式筆記" scheme="https://yachuchang102.github.io/resume/tags/%E7%A8%8B%E5%BC%8F%E7%AD%86%E8%A8%98/"/>
+    
+      <category term="Github Pages" scheme="https://yachuchang102.github.io/resume/tags/Github-Pages/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo＋NexT主題建置筆記</title>
     <link href="https://yachuchang102.github.io/resume/2020/05/15/codenote-hexo/"/>
     <id>https://yachuchang102.github.io/resume/2020/05/15/codenote-hexo/</id>
     <published>2020-05-14T16:00:00.000Z</published>
-    <updated>2020-05-15T15:11:12.487Z</updated>
+    <updated>2020-05-15T16:48:56.114Z</updated>
     
     <summary type="html">
     
