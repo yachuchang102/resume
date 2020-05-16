@@ -132,9 +132,9 @@
       </tags>
   </entry>
   <entry>
-    <title>codenote-githubpages</title>
+    <title>Vue-cli3專案部署到GitHub Pages</title>
     <url>/resume/2020/05/16/codenote-githubpages/</url>
-    <content><![CDATA[<h2 id="Vue-cli3專案部署到GitHub-Pages"><a href="#Vue-cli3專案部署到GitHub-Pages" class="headerlink" title="Vue-cli3專案部署到GitHub Pages"></a>Vue-cli3專案部署到GitHub Pages</h2><h3 id="新增New-repository"><a href="#新增New-repository" class="headerlink" title="新增New repository"></a>新增New repository</h3><p>在github上新增一個儲存庫</p>
+    <content><![CDATA[<h3 id="新增New-repository"><a href="#新增New-repository" class="headerlink" title="新增New repository"></a>新增New repository</h3><p>在github上新增一個儲存庫</p>
 <a id="more"></a>
 <h3 id="建立Vue-config-js"><a href="#建立Vue-config-js" class="headerlink" title="建立Vue.config.js"></a>建立Vue.config.js</h3><p>在根目錄新建一個檔案</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">	publicPath:&#39;&#x2F;&#123;專案名稱&#125;&#x2F;dist&#x2F;&#39;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
