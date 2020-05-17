@@ -6,7 +6,7 @@
   <link href="/resume/atom.xml" rel="self"/>
   
   <link href="https://yachuchang102.github.io/resume/"/>
-  <updated>2020-05-16T16:31:30.121Z</updated>
+  <updated>2020-05-17T08:54:43.923Z</updated>
   <id>https://yachuchang102.github.io/resume/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>&lt;練習&gt;口罩地圖</title>
+    <link href="https://yachuchang102.github.io/resume/2020/05/17/portfolio-maskmap/"/>
+    <id>https://yachuchang102.github.io/resume/2020/05/17/portfolio-maskmap/</id>
+    <published>2020-05-17T03:46:55.000Z</published>
+    <updated>2020-05-17T08:54:43.923Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;練習的作品，下方是預覽圖&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/eONLA5F.png&quot; alt=&quot;口罩地圖預覽圖&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端作品集" scheme="https://yachuchang102.github.io/resume/categories/%E5%89%8D%E7%AB%AF%E4%BD%9C%E5%93%81%E9%9B%86/"/>
+    
+    
+      <category term="前端作品" scheme="https://yachuchang102.github.io/resume/tags/%E5%89%8D%E7%AB%AF%E4%BD%9C%E5%93%81/"/>
+    
+      <category term="口罩地圖" scheme="https://yachuchang102.github.io/resume/tags/%E5%8F%A3%E7%BD%A9%E5%9C%B0%E5%9C%96/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue-cli3專案部署到GitHub Pages</title>
