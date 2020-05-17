@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>YC的隨手筆記</title>
+  
+  
+  <link href="/resume/atom.xml" rel="self"/>
+  
+  <link href="https://yachuchang102.github.io/resume/"/>
+  <updated>2020-05-16T16:31:30.121Z</updated>
+  <id>https://yachuchang102.github.io/resume/</id>
+  
+  <author>
+    <name>YC</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue-cli3專案部署到GitHub Pages</title>
+    <link href="https://yachuchang102.github.io/resume/2020/05/16/codenote-githubpages/"/>
+    <id>https://yachuchang102.github.io/resume/2020/05/16/codenote-githubpages/</id>
+    <published>2020-05-16T14:45:25.000Z</published>
+    <updated>2020-05-16T16:31:30.121Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;新增New-repository&quot;&gt;&lt;a href=&quot;#新增New-repository&quot; class=&quot;headerlink&quot; title=&quot;新增New repository&quot;&gt;&lt;/a&gt;新增New repository&lt;/h3&gt;&lt;p&gt;在github上新增一個儲存庫&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端筆記" scheme="https://yachuchang102.github.io/resume/categories/%E5%89%8D%E7%AB%AF%E7%AD%86%E8%A8%98/"/>
+    
+    
+      <category term="程式筆記" scheme="https://yachuchang102.github.io/resume/tags/%E7%A8%8B%E5%BC%8F%E7%AD%86%E8%A8%98/"/>
+    
+      <category term="Github Pages" scheme="https://yachuchang102.github.io/resume/tags/Github-Pages/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo＋NexT主題建置筆記</title>
+    <link href="https://yachuchang102.github.io/resume/2020/05/15/codenote-hexo/"/>
+    <id>https://yachuchang102.github.io/resume/2020/05/15/codenote-hexo/</id>
+    <published>2020-05-14T16:00:00.000Z</published>
+    <updated>2020-05-15T16:48:56.114Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Hexo快速安裝&quot;&gt;&lt;a href=&quot;#Hexo快速安裝&quot; class=&quot;headerlink&quot; title=&quot;Hexo快速安裝&quot;&gt;&lt;/a&gt;Hexo快速安裝&lt;/h2&gt;&lt;h5 id=&quot;確認一定要有Node-js的環境&quot;&gt;&lt;a href=&quot;#確認一定要有Node-js的環境&quot; class=&quot;headerlink&quot; title=&quot;確認一定要有Node.js的環境&quot;&gt;&lt;/a&gt;確認一定要有Node.js的環境&lt;/h5&gt;&lt;h5 id=&quot;安裝Hexo-cli&quot;&gt;&lt;a href=&quot;#安裝Hexo-cli&quot; class=&quot;headerlink&quot; title=&quot;安裝Hexo-cli&quot;&gt;&lt;/a&gt;安裝Hexo-cli&lt;/h5&gt;&lt;p&gt;Mac要加sudo在前面&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install -g hexo-cli&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&quot;先建立一個資料夾，cd到那資料夾後，快速建立雛型&quot;&gt;&lt;a href=&quot;#先建立一個資料夾，cd到那資料夾後，快速建立雛型&quot; class=&quot;headerlink&quot; title=&quot;先建立一個資料夾，cd到那資料夾後，快速建立雛型&quot;&gt;&lt;/a&gt;先建立一個資料夾，cd到那資料夾後，快速建立雛型&lt;/h5&gt;
+    
+    </summary>
+    
+    
+      <category term="前端筆記" scheme="https://yachuchang102.github.io/resume/categories/%E5%89%8D%E7%AB%AF%E7%AD%86%E8%A8%98/"/>
+    
+    
+      <category term="程式筆記" scheme="https://yachuchang102.github.io/resume/tags/%E7%A8%8B%E5%BC%8F%E7%AD%86%E8%A8%98/"/>
+    
+      <category term="Hexo" scheme="https://yachuchang102.github.io/resume/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>測試筆記</title>
+    <link href="https://yachuchang102.github.io/resume/2020/05/15/codenote-test/"/>
+    <id>https://yachuchang102.github.io/resume/2020/05/15/codenote-test/</id>
+    <published>2020-05-14T16:00:00.000Z</published>
+    <updated>2020-05-15T12:51:27.802Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;測試文&quot;&gt;&lt;a href=&quot;#測試文&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端筆記" scheme="https://yachuchang102.github.io/resume/categories/%E5%89%8D%E7%AB%AF%E7%AD%86%E8%A8%98/"/>
+    
+    
+      <category term="程式筆記" scheme="https://yachuchang102.github.io/resume/tags/%E7%A8%8B%E5%BC%8F%E7%AD%86%E8%A8%98/"/>
+    
+  </entry>
+  
+</feed>

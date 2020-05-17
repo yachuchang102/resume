@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/resume/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/resume/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/resume/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/resume/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/resume/css/main.css">
+
+
+<link rel="stylesheet" href="/resume/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/resume/lib/pace/pace-theme-flash.min.css">
+  <script src="/resume/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yachuchang102.github.io","root":"/resume/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Hexo快速安裝確認一定要有Node.js的環境安裝Hexo-cliMac要加sudo在前面 1npm install -g hexo-cli 先建立一個資料夾，cd到那資料夾後，快速建立雛型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo＋NexT主題建置筆記">
+<meta property="og:url" content="https://yachuchang102.github.io/resume/2020/05/15/codenote-hexo/index.html">
+<meta property="og:site_name" content="YC的隨手筆記">
+<meta property="og:description" content="Hexo快速安裝確認一定要有Node.js的環境安裝Hexo-cliMac要加sudo在前面 1npm install -g hexo-cli 先建立一個資料夾，cd到那資料夾後，快速建立雛型">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://res.cloudinary.com/dfm2je8hf/image/upload/v1589523936/fixed_root_cfzf2t.png">
+<meta property="og:image" content="https://res.cloudinary.com/dfm2je8hf/image/upload/v1589512454/theme_next.png">
+<meta property="article:published_time" content="2020-05-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-05-15T16:48:56.114Z">
+<meta property="article:author" content="YC">
+<meta property="article:tag" content="程式筆記">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://res.cloudinary.com/dfm2je8hf/image/upload/v1589523936/fixed_root_cfzf2t.png">
+
+<link rel="canonical" href="https://yachuchang102.github.io/resume/2020/05/15/codenote-hexo/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-tw'
+  };
+</script>
+
+  <title>Hexo＋NexT主題建置筆記 | YC的隨手筆記</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/resume/atom.xml" title="YC的隨手筆記" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/resume/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">YC的隨手筆記</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/resume/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/resume/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/resume/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/resume/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/resume/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://yachuchang102.github.io/resume/2020/05/15/codenote-hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/resume/images/avatar.gif">
+      <meta itemprop="name" content="YC">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YC的隨手筆記">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo＋NexT主題建置筆記
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-05-15 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-15T00:00:00+08:00">2020-05-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-05-16 00:48:56" itemprop="dateModified" datetime="2020-05-16T00:48:56+08:00">2020-05-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/resume/categories/%E5%89%8D%E7%AB%AF%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">前端筆記</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Hexo快速安裝"><a href="#Hexo快速安裝" class="headerlink" title="Hexo快速安裝"></a>Hexo快速安裝</h2><h5 id="確認一定要有Node-js的環境"><a href="#確認一定要有Node-js的環境" class="headerlink" title="確認一定要有Node.js的環境"></a>確認一定要有Node.js的環境</h5><h5 id="安裝Hexo-cli"><a href="#安裝Hexo-cli" class="headerlink" title="安裝Hexo-cli"></a>安裝Hexo-cli</h5><p>Mac要加sudo在前面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h5 id="先建立一個資料夾，cd到那資料夾後，快速建立雛型"><a href="#先建立一個資料夾，cd到那資料夾後，快速建立雛型" class="headerlink" title="先建立一個資料夾，cd到那資料夾後，快速建立雛型"></a>先建立一個資料夾，cd到那資料夾後，快速建立雛型</h5><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br><span class="line">cd &lt;folder&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p>folder名稱可有可無，不加就直接建構在當個資料夾上</p>
+<p>用VScode打開看結構，文章都放在source/_posts資料夾內</p>
+<h5 id="Run-Server-在本地端運行預覽-localhost-4000"><a href="#Run-Server-在本地端運行預覽-localhost-4000" class="headerlink" title="Run Server 在本地端運行預覽 localhost:4000"></a>Run Server 在本地端運行預覽 localhost:4000</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p>也可簡寫</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>如果4000port被佔住，可以試試</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server -p 5000</span><br></pre></td></tr></table></figure>
+
+<p>服務停掉</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">control + c</span><br></pre></td></tr></table></figure>
+
+<p>建立（編譯）靜態網站</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<p>g=generate 生成public file</p>
+<h2 id="儲存在github上，發佈GitHub-pages"><a href="#儲存在github上，發佈GitHub-pages" class="headerlink" title="儲存在github上，發佈GitHub pages"></a>儲存在github上，發佈GitHub pages</h2><h5 id="github上面新增儲存庫"><a href="#github上面新增儲存庫" class="headerlink" title="github上面新增儲存庫"></a>github上面新增儲存庫</h5><ul>
+<li><p>{用戶名稱}.github.io 只有一個能放在最根目錄的專案 Branch:master</p>
+<p>如果要放在上面 repository name就是 {用戶名稱}.github.io</p>
+</li>
+<li><p>{用戶名稱}.github.io/{專案名稱} 可以多個 Branch:gh-pages</p>
+</li>
+</ul>
+<h5 id="在此專案的terminal打上："><a href="#在此專案的terminal打上：" class="headerlink" title="在此專案的terminal打上："></a>在此專案的terminal打上：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;create a new repository</span><br><span class="line">git init</span><br><span class="line">git add.</span><br><span class="line">git commit -m &quot;git init&quot;</span><br></pre></td></tr></table></figure>
+
+<h5 id="push上去"><a href="#push上去" class="headerlink" title="push上去"></a>push上去</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin &#123;用戶名稱&#125;.github.io&#x2F;&#123;專案名稱&#125;.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<h5 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h5><p>打開站點配置文件(_config.yml)，貼上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: &#123;用戶名稱&#125;.github.io&#x2F;&#123;專案名稱&#125;.git &#x2F;&#x2F;儲存庫路徑</span><br><span class="line">  branch: gh-pages or master &#x2F;&#x2F;branch:gh-pages</span><br></pre></td></tr></table></figure>
+
+<p>部署/要安裝hexo自動部署工具</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save &#x2F;&#x2F;install hexo自動部署工具</span><br><span class="line">hexo d &#x2F;&#x2F;push public to branch:gh-pages</span><br></pre></td></tr></table></figure>
+
+<p>開啟<code>github網站</code>→ <code>setting</code>→<code>Github Pages</code> 點連結</p>
+<p>​    這裡會跳錯，版型會跑掉，是因為相對/絕對路徑的問題</p>
+<p>以下為指向根目錄的路徑，所以版型會跑掉<code>/css/main.css/</code></p>
+<p><img src="https://res.cloudinary.com/dfm2je8hf/image/upload/v1589523936/fixed_root_cfzf2t.png" alt="fixed:root">)打開站點配置文件(_config.yml)，找到relative_link把它改為true，將絕對路徑改為相對路徑</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g &#x2F;&#x2F;再發布一次</span><br><span class="line">hexo d &#x2F;&#x2F;再部署一次</span><br></pre></td></tr></table></figure>
+
+<p>github重新編譯不會那麼快，有可能要10分鐘至半天</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WARN  Since caching is turned on, the &#96;relative_link&#96; option in Hexo &#96;_config.yml&#96; is set to &#96;false&#96; to avoid potential hazards.</span><br></pre></td></tr></table></figure>
+
+<p>不知道為什麼用NexT主題會有以上問題，所以我把schemes換成Pisces（原本是Muse）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Schemes</span><br><span class="line">scheme: Pisces</span><br><span class="line">#scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">#scheme: Gemini</span><br></pre></td></tr></table></figure>
+
+<p>修改路徑，似乎就能顯現在github pages上了(?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &#39;http:&#x2F;&#x2F;yoursite.com&#x2F;child&#39; and root as &#39;&#x2F;child&#x2F;&#39;</span><br><span class="line">url: &#39;https:&#x2F;&#x2F;&#123;專案名稱&#125;.github.io&#x2F;resume&#x2F;&#39;</span><br><span class="line">root: &#x2F;resume</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="安裝版型"><a href="#安裝版型" class="headerlink" title="安裝版型"></a>安裝版型</h2><h5 id="安裝NexT主題"><a href="#安裝NexT主題" class="headerlink" title="安裝NexT主題"></a>安裝NexT主題</h5><p>方法有兩個：</p>
+<ol>
+<li><p>在github clone該主題並放在hexo的theme目錄下</p>
+</li>
+<li><p>terminal輸入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h5 id="啟用主題"><a href="#啟用主題" class="headerlink" title="啟用主題"></a>啟用主題</h5><p>打開站點配置文件(_config.yml)，找到theme，並將值改為next</p>
+<p><img src="https://res.cloudinary.com/dfm2je8hf/image/upload/v1589512454/theme_next.png" alt="theme:NexT"></p>
+<h5 id="發布文章"><a href="#發布文章" class="headerlink" title="發布文章"></a>發布文章</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new [postName]</span><br></pre></td></tr></table></figure>
+
+<p>postname以英文為主</p>
+<p>修改完後再發布、部署</p>
+<h5 id="新增tags-categories-archives-頁面"><a href="#新增tags-categories-archives-頁面" class="headerlink" title="新增tags, categories, archives 頁面"></a>新增tags, categories, archives 頁面</h5><p>把about, tags,categories啟用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F; || fa fa-home</span><br><span class="line">  about: &#x2F;about&#x2F; || fa fa-user</span><br><span class="line">  tags: &#x2F;tags&#x2F; || fa fa-tags</span><br><span class="line">  categories: &#x2F;categories&#x2F; || fa fa-th</span><br><span class="line">  archives: &#x2F;archives&#x2F; || fa fa-archive</span><br><span class="line">  #schedule: &#x2F;schedule&#x2F; || fa fa-calendar</span><br><span class="line">  #sitemap: &#x2F;sitemap.xml || fa fa-sitemap</span><br><span class="line">  #commonweal: &#x2F;404&#x2F; || fa fa-heartbeat</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags &#x2F;&#x2F;增加標籤</span><br><span class="line">hexo new page categories &#x2F;&#x2F;增加分類</span><br><span class="line">hexo new page archives</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;到source下新出現的這3個目錄，裡面的index.md各自加上type: &quot;tags&quot;(categories、archives同理)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;md文章可設置成</span><br><span class="line">---</span><br><span class="line">title: Hexo＋NexT主題建置筆記</span><br><span class="line">date: 2020-05-15</span><br><span class="line">tage:</span><br><span class="line">- 程式筆記</span><br><span class="line">- Hexo</span><br><span class="line">categories:</span><br><span class="line">- 前端筆記</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h2 id="額外功能"><a href="#額外功能" class="headerlink" title="額外功能"></a>額外功能</h2><h5 id="顯示閱讀進度"><a href="#顯示閱讀進度" class="headerlink" title="顯示閱讀進度%"></a>顯示閱讀進度%</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;搜尋scrollpercent為true</span><br></pre></td></tr></table></figure>
+
+<h5 id="NexT中文化"><a href="#NexT中文化" class="headerlink" title="NexT中文化"></a>NexT中文化</h5><p>到themes/next/language資料夾中，把<code>zh-Tw.yml</code>檔名改成<code>zh-tw.yml</code></p>
+<h5 id="再到站點配置文件中language設成zh-tw"><a href="#再到站點配置文件中language設成zh-tw" class="headerlink" title="再到站點配置文件中language設成zh-tw"></a>再到站點配置文件中language設成zh-tw</h5><p>把歸檔中的『只有幾篇文章』給註解掉</p>
+<p>參考文章</p>
+<p><a href="https://pingshiuan.gitlab.io/hexo_gitlab_adsense_nctu.html" target="_blank" rel="noopener">使用hexo&amp;gitlab&amp;adsense&amp;nctu.me 建立一個簡易的blog</a></p>
+<h5 id="local-search"><a href="#local-search" class="headerlink" title="local search"></a>local search</h5><p>安裝插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+<p>在主題配置文件中，添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
+
+<p>在主題文件配置中，搜尋<code>local_search</code>，設置為<code>true</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  # Local search</span><br><span class="line">  # Dependencies: https:&#x2F;&#x2F;github.com&#x2F;flashlab&#x2F;hexo-generator-search</span><br><span class="line">local_search:</span><br><span class="line">  enable: true</span><br><span class="line">  # if auto, trigger search by changing input</span><br><span class="line">  # if manual, trigger search by pressing enter key or search button</span><br><span class="line">  trigger: auto</span><br><span class="line">  # show top n results per article, show all results by setting to -1</span><br><span class="line">  top_n_per_article: 1</span><br></pre></td></tr></table></figure>
+
+<p><a href="http://dinghongkai.com/2017/12/18/Blog-development-4-NexT-Theme-and-Basic-Customization/" target="_blank" rel="noopener">參考文章</a></p>
+<h5 id="背景動畫"><a href="#背景動畫" class="headerlink" title="背景動畫"></a>背景動畫</h5><p>NexT6.0有新的安裝方式</p>
+<p>先載入插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># JavaScript 3D library:</span><br><span class="line">cd themes&#x2F;next</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-three source&#x2F;lib&#x2F;three</span><br><span class="line"></span><br><span class="line"># Canvas-nest:</span><br><span class="line">cd themes&#x2F;next</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-canvas-nest source&#x2F;lib&#x2F;canvas-nest</span><br><span class="line"></span><br><span class="line"># Canvas_ribbon:</span><br><span class="line">cd themes&#x2F;next</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-canvas-ribbon source&#x2F;lib&#x2F;canvas-ribbon</span><br></pre></td></tr></table></figure>
+
+<p>如果要啟用canvas_net，把以下加入到主題配置文件且啟用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Canvas-nest</span><br><span class="line"># Dependencies: https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-canvas-nest</span><br><span class="line">canvas_nest:</span><br><span class="line">  enable: false</span><br><span class="line">  onmobile: true # display on mobile or not</span><br><span class="line">  color: &quot;0,0,255&quot; # RGB values, use &#39;,&#39; to separate</span><br><span class="line">  opacity: 0.5 # the opacity of line: 0~1</span><br><span class="line">  zIndex: -1 # z-index property of the background</span><br><span class="line">  count: 99 # the number of lines</span><br></pre></td></tr></table></figure>
+
+<p>如果要啟用three 直接啟用就好</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># JavaScript 3D library.</span><br><span class="line"># Dependencies: https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-three</span><br><span class="line">three:</span><br><span class="line">  enable: true</span><br><span class="line">  three_waves: false</span><br><span class="line">  canvas_lines: true</span><br><span class="line">  canvas_sphere: false</span><br></pre></td></tr></table></figure>
+
+<h5 id="RSS的設置"><a href="#RSS的設置" class="headerlink" title="RSS的設置"></a>RSS的設置</h5><p><a href="https://zzz.zywvvd.com/2020/03/20/next/14_add_rss/next-add-rss/" target="_blank" rel="noopener">參考文章</a></p>
+<h2 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h2><p><a href="[https://blog.typeart.cc/HEXO%E6%90%AD%E9%85%8D%E4%B8%BB%E9%A1%8Cnext%E5%9F%BA%E7%A4%8E%E9%85%8D%E7%BD%AE%E6%95%99%E5%AD%B8/](https://blog.typeart.cc/HEXO搭配主題next基礎配置教學/)">HEXO搭配主題next基礎配置教學</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/resume/tags/%E7%A8%8B%E5%BC%8F%E7%AD%86%E8%A8%98/" rel="tag"># 程式筆記</a>
+              <a href="/resume/tags/Hexo/" rel="tag"># Hexo</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/resume/2020/05/15/codenote-test/" rel="prev" title="測試筆記">
+      <i class="fa fa-chevron-left"></i> 測試筆記
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/resume/2020/05/16/codenote-githubpages/" rel="next" title="Vue-cli3專案部署到GitHub Pages">
+      Vue-cli3專案部署到GitHub Pages <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo快速安裝"><span class="nav-number">1.</span> <span class="nav-text">Hexo快速安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#確認一定要有Node-js的環境"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">確認一定要有Node.js的環境</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安裝Hexo-cli"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">安裝Hexo-cli</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#先建立一個資料夾，cd到那資料夾後，快速建立雛型"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">先建立一個資料夾，cd到那資料夾後，快速建立雛型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Run-Server-在本地端運行預覽-localhost-4000"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">Run Server 在本地端運行預覽 localhost:4000</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#儲存在github上，發佈GitHub-pages"><span class="nav-number">2.</span> <span class="nav-text">儲存在github上，發佈GitHub pages</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#github上面新增儲存庫"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">github上面新增儲存庫</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在此專案的terminal打上："><span class="nav-number">2.0.0.2.</span> <span class="nav-text">在此專案的terminal打上：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#push上去"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">push上去</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#部署到github"><span class="nav-number">2.0.0.4.</span> <span class="nav-text">部署到github</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝版型"><span class="nav-number">3.</span> <span class="nav-text">安裝版型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安裝NexT主題"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">安裝NexT主題</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#啟用主題"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">啟用主題</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#發布文章"><span class="nav-number">3.0.0.3.</span> <span class="nav-text">發布文章</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#新增tags-categories-archives-頁面"><span class="nav-number">3.0.0.4.</span> <span class="nav-text">新增tags, categories, archives 頁面</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#額外功能"><span class="nav-number">4.</span> <span class="nav-text">額外功能</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#顯示閱讀進度"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">顯示閱讀進度%</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#NexT中文化"><span class="nav-number">4.0.0.2.</span> <span class="nav-text">NexT中文化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#再到站點配置文件中language設成zh-tw"><span class="nav-number">4.0.0.3.</span> <span class="nav-text">再到站點配置文件中language設成zh-tw</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#local-search"><span class="nav-number">4.0.0.4.</span> <span class="nav-text">local search</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#背景動畫"><span class="nav-number">4.0.0.5.</span> <span class="nav-text">背景動畫</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#RSS的設置"><span class="nav-number">4.0.0.6.</span> <span class="nav-text">RSS的設置</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考文章"><span class="nav-number">5.</span> <span class="nav-text">參考文章</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">YC</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+
+
+   <div class="feed-link motion-element">
+     <a href="/resume/atom.xml" rel="alternate">
+       <i class="fa fa-rss"></i>
+       RSS
+     </a>
+   </div>
+ 
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/resume/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/resume/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/resume/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:yachuchang102@gmail.com" title="E-Mail → mailto:yachuchang102@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-crow"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YC</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/resume/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/resume/lib/velocity/velocity.min.js"></script>
+  <script src="/resume/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/resume/js/utils.js"></script>
+
+<script src="/resume/js/motion.js"></script>
+
+
+<script src="/resume/js/schemes/pisces.js"></script>
+
+
+<script src="/resume/js/next-boot.js"></script>
+
+
+  <script defer src="/resume/lib/three/three.min.js"></script>
+    <script defer src="/resume/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/resume/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
