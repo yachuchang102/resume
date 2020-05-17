@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Vue-cli3專案部署到GitHub Pages</title>
+    <url>/resume/2020/05/16/codenote-githubpages/</url>
+    <content><![CDATA[<h3 id="新增New-repository"><a href="#新增New-repository" class="headerlink" title="新增New repository"></a>新增New repository</h3><p>在github上新增一個儲存庫</p>
+<a id="more"></a>
+<h3 id="建立Vue-config-js"><a href="#建立Vue-config-js" class="headerlink" title="建立Vue.config.js"></a>建立Vue.config.js</h3><p>在根目錄新建一個檔案</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">	publicPath:&#39;&#x2F;&#123;專案名稱&#125;&#x2F;dist&#x2F;&#39;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="也要上傳dist檔"><a href="#也要上傳dist檔" class="headerlink" title="也要上傳dist檔"></a>也要上傳dist檔</h3><p>.gitignore裡面標示的是不會上傳github的檔案，把/dist給消掉後存檔</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">node_modules</span><br><span class="line">&#x2F;dist</span><br></pre></td></tr></table></figure>
+
+<h3 id="打包專案"><a href="#打包專案" class="headerlink" title="打包專案"></a>打包專案</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+
+<h3 id="專案連結github"><a href="#專案連結github" class="headerlink" title="專案連結github"></a>專案連結github</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin https:&#x2F;&#x2F;github.com&#x2F;&#123;user&#125;&#x2F;&#123;repository-name&#125;.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<h3 id="重新導向-新的repository"><a href="#重新導向-新的repository" class="headerlink" title="重新導向 新的repository"></a>重新導向 新的repository</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 檢查原本的位置</span><br><span class="line">git remote -v</span><br><span class="line"> </span><br><span class="line"># 替換到新的位置</span><br><span class="line">git remote set-url origin https:&#x2F;&#x2F;github.com&#x2F;&#123;user&#125;&#x2F;&#123;repository-name&#125;.git</span><br><span class="line"> </span><br><span class="line"># 檢查是否真的替換到新的位置</span><br><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+
+<p>網站連結變為</p>
+<p>github網址/{專案名稱}/dist/</p>
+]]></content>
+      <categories>
+        <category>前端筆記</category>
+      </categories>
+      <tags>
+        <tag>程式筆記</tag>
+        <tag>Github Pages</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>&lt;練習&gt;口罩地圖</title>
+    <url>/resume/2020/05/17/portfolio-maskmap/</url>
+    <content><![CDATA[<p>練習的作品，下方是預覽圖</p>
+<p><img src="https://i.imgur.com/eONLA5F.png" alt="口罩地圖預覽圖"></p>
+<p><a href="https://yachuchang102.github.io/maskmap/dist/">作品頁連結</a></p>
+<p><a href="https://github.com/yachuchang102/maskmap" target="_blank" rel="noopener">原始碼連結</a></p>
+]]></content>
+      <categories>
+        <category>前端作品集</category>
+      </categories>
+      <tags>
+        <tag>前端作品</tag>
+        <tag>口罩地圖</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo＋NexT主題建置筆記</title>
     <url>/resume/2020/05/15/codenote-hexo/</url>
     <content><![CDATA[<h2 id="Hexo快速安裝"><a href="#Hexo快速安裝" class="headerlink" title="Hexo快速安裝"></a>Hexo快速安裝</h2><h5 id="確認一定要有Node-js的環境"><a href="#確認一定要有Node-js的環境" class="headerlink" title="確認一定要有Node.js的環境"></a>確認一定要有Node.js的環境</h5><h5 id="安裝Hexo-cli"><a href="#安裝Hexo-cli" class="headerlink" title="安裝Hexo-cli"></a>安裝Hexo-cli</h5><p>Mac要加sudo在前面</p>
@@ -118,61 +162,6 @@
       <tags>
         <tag>程式筆記</tag>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>測試筆記</title>
-    <url>/resume/2020/05/15/codenote-test/</url>
-    <content><![CDATA[<h3 id="測試文"><a href="#測試文" class="headerlink" title="測試文"></a>測試文</h3>]]></content>
-      <categories>
-        <category>前端筆記</category>
-      </categories>
-      <tags>
-        <tag>程式筆記</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue-cli3專案部署到GitHub Pages</title>
-    <url>/resume/2020/05/16/codenote-githubpages/</url>
-    <content><![CDATA[<h3 id="新增New-repository"><a href="#新增New-repository" class="headerlink" title="新增New repository"></a>新增New repository</h3><p>在github上新增一個儲存庫</p>
-<a id="more"></a>
-<h3 id="建立Vue-config-js"><a href="#建立Vue-config-js" class="headerlink" title="建立Vue.config.js"></a>建立Vue.config.js</h3><p>在根目錄新建一個檔案</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">	publicPath:&#39;&#x2F;&#123;專案名稱&#125;&#x2F;dist&#x2F;&#39;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="也要上傳dist檔"><a href="#也要上傳dist檔" class="headerlink" title="也要上傳dist檔"></a>也要上傳dist檔</h3><p>.gitignore裡面標示的是不會上傳github的檔案，把/dist給消掉後存檔</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">node_modules</span><br><span class="line">&#x2F;dist</span><br></pre></td></tr></table></figure>
-
-<h3 id="打包專案"><a href="#打包專案" class="headerlink" title="打包專案"></a>打包專案</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
-
-<h3 id="專案連結github"><a href="#專案連結github" class="headerlink" title="專案連結github"></a>專案連結github</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin https:&#x2F;&#x2F;github.com&#x2F;&#123;user&#125;&#x2F;&#123;repository-name&#125;.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<h3 id="重新導向-新的repository"><a href="#重新導向-新的repository" class="headerlink" title="重新導向 新的repository"></a>重新導向 新的repository</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 檢查原本的位置</span><br><span class="line">git remote -v</span><br><span class="line"> </span><br><span class="line"># 替換到新的位置</span><br><span class="line">git remote set-url origin https:&#x2F;&#x2F;github.com&#x2F;&#123;user&#125;&#x2F;&#123;repository-name&#125;.git</span><br><span class="line"> </span><br><span class="line"># 檢查是否真的替換到新的位置</span><br><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
-
-<p>網站連結變為</p>
-<p>github網址/{專案名稱}/dist/</p>
-]]></content>
-      <categories>
-        <category>前端筆記</category>
-      </categories>
-      <tags>
-        <tag>程式筆記</tag>
-        <tag>Github Pages</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>&lt;練習&gt;口罩地圖</title>
-    <url>/resume/2020/05/17/portfolio-maskmap/</url>
-    <content><![CDATA[<p>練習的作品，下方是預覽圖</p>
-<p><img src="https://i.imgur.com/eONLA5F.png" alt="口罩地圖預覽圖"></p>
-<p><a href="https://yachuchang102.github.io/maskmap/dist/">作品頁連結</a></p>
-<p><a href="https://github.com/yachuchang102/maskmap" target="_blank" rel="noopener">原始碼連結</a></p>
-]]></content>
-      <categories>
-        <category>前端作品集</category>
-      </categories>
-      <tags>
-        <tag>前端作品</tag>
-        <tag>口罩地圖</tag>
       </tags>
   </entry>
 </search>
