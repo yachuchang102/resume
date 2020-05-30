@@ -384,4 +384,21 @@
         <tag>Vue</tag>
       </tags>
   </entry>
+  <entry>
+    <title>&lt;練習&gt;電商網站</title>
+    <url>/resume/2020/05/30/portfolio-ecommerce/</url>
+    <content><![CDATA[<p>練習的作品，下方是預覽圖</p>
+<p><img src="https://i.imgur.com/pXwvAWI.png" alt="電商網站預覽圖"></p>
+<p><a href="https://yachuchang102.github.io/estore/dist/">作品頁連結</a></p>
+<p><a href="https://github.com/yachuchang102/estore" target="_blank" rel="noopener">原始碼連結</a></p>
+]]></content>
+      <categories>
+        <category>前端作品集</category>
+      </categories>
+      <tags>
+        <tag>前端作品</tag>
+        <tag>Vue</tag>
+        <tag>電商網站</tag>
+      </tags>
+  </entry>
 </search>
