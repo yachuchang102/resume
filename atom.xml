@@ -6,7 +6,7 @@
   <link href="/resume/atom.xml" rel="self"/>
   
   <link href="https://yachuchang102.github.io/resume/"/>
-  <updated>2020-05-17T15:44:31.566Z</updated>
+  <updated>2020-05-30T15:22:44.269Z</updated>
   <id>https://yachuchang102.github.io/resume/</id>
   
   <author>
@@ -15,6 +15,64 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端練習-電商網站02</title>
+    <link href="https://yachuchang102.github.io/resume/2020/05/30/codenote_vue_02/"/>
+    <id>https://yachuchang102.github.io/resume/2020/05/30/codenote_vue_02/</id>
+    <published>2020-05-29T16:00:00.000Z</published>
+    <updated>2020-05-30T15:22:44.269Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;製造讀取效果&quot;&gt;&lt;a href=&quot;#製造讀取效果&quot; class=&quot;headerlink&quot; title=&quot;製造讀取效果&quot;&gt;&lt;/a&gt;製造讀取效果&lt;/h3&gt;&lt;h4 id=&quot;全畫面的讀取效果&quot;&gt;&lt;a href=&quot;#全畫面的讀取效果&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端筆記" scheme="https://yachuchang102.github.io/resume/categories/%E5%89%8D%E7%AB%AF%E7%AD%86%E8%A8%98/"/>
+    
+    
+      <category term="程式筆記" scheme="https://yachuchang102.github.io/resume/tags/%E7%A8%8B%E5%BC%8F%E7%AD%86%E8%A8%98/"/>
+    
+      <category term="Vue" scheme="https://yachuchang102.github.io/resume/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端練習-電商網站01</title>
+    <link href="https://yachuchang102.github.io/resume/2020/05/30/codenote_vue_01/"/>
+    <id>https://yachuchang102.github.io/resume/2020/05/30/codenote_vue_01/</id>
+    <published>2020-05-29T16:00:00.000Z</published>
+    <updated>2020-05-30T15:22:44.269Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;製作登入頁面&quot;&gt;&lt;a href=&quot;#製作登入頁面&quot; class=&quot;headerlink&quot; title=&quot;製作登入頁面&quot;&gt;&lt;/a&gt;製作登入頁面&lt;/h3&gt;&lt;h4 id=&quot;串接login-api&quot;&gt;&lt;a href=&quot;#串接login-api&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端筆記" scheme="https://yachuchang102.github.io/resume/categories/%E5%89%8D%E7%AB%AF%E7%AD%86%E8%A8%98/"/>
+    
+    
+      <category term="程式筆記" scheme="https://yachuchang102.github.io/resume/tags/%E7%A8%8B%E5%BC%8F%E7%AD%86%E8%A8%98/"/>
+    
+      <category term="Vue" scheme="https://yachuchang102.github.io/resume/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>codenote-ecommerce</title>

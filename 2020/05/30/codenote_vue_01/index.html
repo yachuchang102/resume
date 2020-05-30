@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/resume/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/resume/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/resume/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/resume/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/resume/css/main.css">
+
+
+<link rel="stylesheet" href="/resume/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/resume/lib/pace/pace-theme-flash.min.css">
+  <script src="/resume/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yachuchang102.github.io","root":"/resume/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="製作登入頁面串接login api123456789101112131415161718192021222324252627 &#x2F;&#x2F;Login.vue &#x2F;&#x2F;input加上v-model&lt;input  type&#x3D;&quot;email&quot;  id&#x3D;&quot;inputEmail&quot;  class&#x3D;&quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端練習-電商網站01">
+<meta property="og:url" content="https://yachuchang102.github.io/resume/2020/05/30/codenote_vue_01/index.html">
+<meta property="og:site_name" content="YC的隨手筆記">
+<meta property="og:description" content="製作登入頁面串接login api123456789101112131415161718192021222324252627 &#x2F;&#x2F;Login.vue &#x2F;&#x2F;input加上v-model&lt;input  type&#x3D;&quot;email&quot;  id&#x3D;&quot;inputEmail&quot;  class&#x3D;&quot;">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-05-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-05-30T15:22:44.269Z">
+<meta property="article:author" content="YC">
+<meta property="article:tag" content="程式筆記">
+<meta property="article:tag" content="Vue">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://yachuchang102.github.io/resume/2020/05/30/codenote_vue_01/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-tw'
+  };
+</script>
+
+  <title>前端練習-電商網站01 | YC的隨手筆記</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/resume/atom.xml" title="YC的隨手筆記" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/resume/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">YC的隨手筆記</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/resume/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/resume/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/resume/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/resume/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/resume/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://yachuchang102.github.io/resume/2020/05/30/codenote_vue_01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/resume/images/avatar.gif">
+      <meta itemprop="name" content="YC">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YC的隨手筆記">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          前端練習-電商網站01
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2020-05-30 00:00:00 / 修改時間：23:22:44" itemprop="dateCreated datePublished" datetime="2020-05-30T00:00:00+08:00">2020-05-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/resume/categories/%E5%89%8D%E7%AB%AF%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">前端筆記</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="製作登入頁面"><a href="#製作登入頁面" class="headerlink" title="製作登入頁面"></a>製作登入頁面</h3><h4 id="串接login-api"><a href="#串接login-api" class="headerlink" title="串接login api"></a>串接login api</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"> &#x2F;&#x2F;Login.vue</span><br><span class="line"> &#x2F;&#x2F;input加上v-model</span><br><span class="line">&lt;input</span><br><span class="line">  type&#x3D;&quot;email&quot;</span><br><span class="line">  id&#x3D;&quot;inputEmail&quot;</span><br><span class="line">  class&#x3D;&quot;form-control&quot;</span><br><span class="line">  v-model&#x3D;&quot;user.username&quot;</span><br><span class="line">  placeholder&#x3D;&quot;Email address&quot; required autofocus&gt;</span><br><span class="line">  &lt;label for&#x3D;&quot;inputPassword&quot; class&#x3D;&quot;sr-only&quot;&gt;Password&lt;&#x2F;label&gt;</span><br><span class="line">  &lt;input</span><br><span class="line">  type&#x3D;&quot;password&quot;</span><br><span class="line">  id&#x3D;&quot;inputPassword&quot;</span><br><span class="line">  class&#x3D;&quot;form-control&quot;</span><br><span class="line">  v-model&#x3D;&quot;user.password&quot;</span><br><span class="line">  placeholder&#x3D;&quot;Password&quot; required&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"> data () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      user: &#123;</span><br><span class="line">        username: &#39;&#39;,</span><br><span class="line">        password: &#39;&#39;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"> &lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在<form>上加入送出的方法signin</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;form class&#x3D;&quot;form-signin&quot; @submit.prevent&#x3D;&quot;signin&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  methods: &#123;</span><br><span class="line">    signin () &#123;</span><br><span class="line">      const api &#x3D; &#96;$&#123;process.env.VUE_APP_API&#125;&#x2F;admin&#x2F;signin&#96;</span><br><span class="line">      const vm &#x3D; this</span><br><span class="line">      this.$http.post(api, vm.user).then((response) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(response.data)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>跨域問題: 在main.js增加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios.defaults.withCredentials &#x3D; true</span><br></pre></td></tr></table></figure>
+
+<p>Vue Router 導航守衛的方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;main.js</span><br><span class="line">router.beforeEach((to, from, next) &#x3D;&gt; &#123;</span><br><span class="line">  console.log(to, from, next)</span><br><span class="line">  if (to.meta.requiresAuth) &#123;</span><br><span class="line">    const api &#x3D; &#96;$&#123;process.env.VUE_APP_API&#125;&#x2F;api&#x2F;user&#x2F;check&#96;</span><br><span class="line">    axios.post(api).then((response) &#x3D;&gt; &#123;</span><br><span class="line">      console.log(response.data)</span><br><span class="line">      if (response.data.success) &#123;</span><br><span class="line">        next()</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        next(&#123;</span><br><span class="line">          path: &#39;&#x2F;login&#39;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    next()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;router&#x2F;index.js 加上meta那一段</span><br><span class="line"> &#123;</span><br><span class="line">    path: &#39;&#x2F;&#39;,</span><br><span class="line">    name: &#39;Home&#39;,</span><br><span class="line">    component: Home,</span><br><span class="line">    meta: &#123; requiresAuth: true &#125;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<p>避免亂輸入網址出現空白頁</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;index.js</span><br><span class="line">&#x2F;&#x2F;多增加path&#39;*&#39;這個物件, 導回login頁面</span><br><span class="line">const routes &#x3D; [</span><br><span class="line">  &#123;</span><br><span class="line">    path: &#39;*&#39;,</span><br><span class="line">    redirect: &#39;login&#39;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: &#39;&#x2F;&#39;,</span><br><span class="line">    name: &#39;Home&#39;,</span><br><span class="line">    component: Home,</span><br><span class="line">    meta: &#123; requiresAuth: true &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: &#39;&#x2F;login&#39;,</span><br><span class="line">    name: &#39;Login&#39;,</span><br><span class="line">    component: Login</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h3 id="套用bootstrap-版型"><a href="#套用bootstrap-版型" class="headerlink" title="套用bootstrap 版型"></a>套用bootstrap 版型</h3><p>example/dashboard</p>
+<p>開新檔複製dashboard.css貼上, 另存新檔_dashboard.scss存在assets資料夾上</p>
+<p>import到all.scss</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;all.scss</span><br><span class="line">@import &quot;~bootstrap&#x2F;scss&#x2F;functions&quot;;</span><br><span class="line">@import &quot;.&#x2F;helpers&#x2F;_variables&quot;;</span><br><span class="line">@import &quot;~bootstrap&#x2F;scss&#x2F;bootstrap&quot;;</span><br><span class="line"></span><br><span class="line">@import &quot;.&#x2F;_dashboard&quot;</span><br></pre></td></tr></table></figure>
+
+<p>新增dashboard.vue</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;nav class&#x3D;&quot;navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow&quot;&gt;</span><br><span class="line">  &lt;a class&#x3D;&quot;navbar-brand col-md-3 col-lg-2 mr-0 px-3&quot; href&#x3D;&quot;#&quot;&gt;Company name&lt;&#x2F;a&gt;</span><br><span class="line">  &lt;button class&#x3D;&quot;navbar-toggler position-absolute d-md-none collapsed&quot; type&#x3D;&quot;button&quot; data-toggle&#x3D;&quot;collapse&quot; data-target&#x3D;&quot;#sidebarMenu&quot; aria-controls&#x3D;&quot;sidebarMenu&quot; aria-expanded&#x3D;&quot;false&quot; aria-label&#x3D;&quot;Toggle navigation&quot;&gt;</span><br><span class="line">    &lt;span class&#x3D;&quot;navbar-toggler-icon&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">  &lt;&#x2F;button&gt;</span><br><span class="line">  &lt;input class&#x3D;&quot;form-control form-control-dark w-100&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Search&quot; aria-label&#x3D;&quot;Search&quot;&gt;</span><br><span class="line">  &lt;ul class&#x3D;&quot;navbar-nav px-3&quot;&gt;</span><br><span class="line">    &lt;li class&#x3D;&quot;nav-item text-nowrap&quot;&gt;</span><br><span class="line">      &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;Sign out&lt;&#x2F;a&gt;</span><br><span class="line">    &lt;&#x2F;li&gt;</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line">&lt;&#x2F;nav&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&quot;container-fluid&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;row&quot;&gt;</span><br><span class="line">    &lt;nav id&#x3D;&quot;sidebarMenu&quot; class&#x3D;&quot;col-md-3 col-lg-2 d-md-block bg-light sidebar collapse&quot;&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;sidebar-sticky pt-3&quot;&gt;</span><br><span class="line">        &lt;ul class&#x3D;&quot;nav flex-column&quot;&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link active&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;home&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Dashboard &lt;span class&#x3D;&quot;sr-only&quot;&gt;(current)&lt;&#x2F;span&gt;</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;file&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Orders</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;shopping-cart&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Products</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;users&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Customers</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;bar-chart-2&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Reports</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;layers&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Integrations</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">        &lt;&#x2F;ul&gt;</span><br><span class="line"></span><br><span class="line">        &lt;h6 class&#x3D;&quot;sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted&quot;&gt;</span><br><span class="line">          &lt;span&gt;Saved reports&lt;&#x2F;span&gt;</span><br><span class="line">          &lt;a class&#x3D;&quot;d-flex align-items-center text-muted&quot; href&#x3D;&quot;#&quot; aria-label&#x3D;&quot;Add a new report&quot;&gt;</span><br><span class="line">            &lt;span data-feather&#x3D;&quot;plus-circle&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">          &lt;&#x2F;a&gt;</span><br><span class="line">        &lt;&#x2F;h6&gt;</span><br><span class="line">        &lt;ul class&#x3D;&quot;nav flex-column mb-2&quot;&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;file-text&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Current month</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;file-text&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Last quarter</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;file-text&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Social engagement</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;file-text&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Year-end sale</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">        &lt;&#x2F;ul&gt;</span><br><span class="line">      &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;nav&gt;</span><br><span class="line"></span><br><span class="line">    &lt;main role&#x3D;&quot;main&quot; class&#x3D;&quot;col-md-9 ml-sm-auto col-lg-10 px-md-4&quot;&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom&quot;&gt;</span><br><span class="line">        &lt;h1 class&#x3D;&quot;h2&quot;&gt;Dashboard&lt;&#x2F;h1&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;btn-toolbar mb-2 mb-md-0&quot;&gt;</span><br><span class="line">          &lt;div class&#x3D;&quot;btn-group mr-2&quot;&gt;</span><br><span class="line">            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-sm btn-outline-secondary&quot;&gt;Share&lt;&#x2F;button&gt;</span><br><span class="line">            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-sm btn-outline-secondary&quot;&gt;Export&lt;&#x2F;button&gt;</span><br><span class="line">          &lt;&#x2F;div&gt;</span><br><span class="line">          &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-sm btn-outline-secondary dropdown-toggle&quot;&gt;</span><br><span class="line">            &lt;span data-feather&#x3D;&quot;calendar&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">            This week</span><br><span class="line">          &lt;&#x2F;button&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">      &lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">      &lt;canvas class&#x3D;&quot;my-4 w-100&quot; id&#x3D;&quot;myChart&quot; width&#x3D;&quot;900&quot; height&#x3D;&quot;380&quot;&gt;&lt;&#x2F;canvas&gt;</span><br><span class="line"></span><br><span class="line">      &lt;h2&gt;Section title&lt;&#x2F;h2&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;table-responsive&quot;&gt;</span><br><span class="line">        &lt;table class&#x3D;&quot;table table-striped table-sm&quot;&gt;</span><br><span class="line">          &lt;thead&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">              &lt;th&gt;#&lt;&#x2F;th&gt;</span><br><span class="line">              &lt;th&gt;Header&lt;&#x2F;th&gt;</span><br><span class="line">              &lt;th&gt;Header&lt;&#x2F;th&gt;</span><br><span class="line">              &lt;th&gt;Header&lt;&#x2F;th&gt;</span><br><span class="line">              &lt;th&gt;Header&lt;&#x2F;th&gt;</span><br><span class="line">            &lt;&#x2F;tr&gt;</span><br><span class="line">          &lt;&#x2F;thead&gt;</span><br><span class="line">          &lt;tbody&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">              &lt;td&gt;1,001&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;Lorem&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;ipsum&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;dolor&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;sit&lt;&#x2F;td&gt;</span><br><span class="line">            &lt;&#x2F;tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">              &lt;td&gt;1,002&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;amet&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;consectetur&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;adipiscing&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;elit&lt;&#x2F;td&gt;</span><br><span class="line">            &lt;&#x2F;tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">              &lt;td&gt;1,003&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;Integer&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;nec&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;odio&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;Praesent&lt;&#x2F;td&gt;</span><br><span class="line">            &lt;&#x2F;tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">              &lt;td&gt;1,003&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;libero&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;Sed&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;cursus&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;ante&lt;&#x2F;td&gt;</span><br><span class="line">            &lt;&#x2F;tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">              &lt;td&gt;1,004&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;dapibus&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;diam&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;Sed&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;nisi&lt;&#x2F;td&gt;</span><br><span class="line">            &lt;&#x2F;tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">              &lt;td&gt;1,005&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;Nulla&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;quis&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;sem&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;at&lt;&#x2F;td&gt;</span><br><span class="line">            &lt;&#x2F;tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">              &lt;td&gt;1,006&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;nibh&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;elementum&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;imperdiet&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;Duis&lt;&#x2F;td&gt;</span><br><span class="line">            &lt;&#x2F;tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">              &lt;td&gt;1,007&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;sagittis&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;ipsum&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;Praesent&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;mauris&lt;&#x2F;td&gt;</span><br><span class="line">            &lt;&#x2F;tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">              &lt;td&gt;1,008&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;Fusce&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;nec&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;tellus&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;sed&lt;&#x2F;td&gt;</span><br><span class="line">            &lt;&#x2F;tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">              &lt;td&gt;1,009&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;augue&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;semper&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;porta&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;Mauris&lt;&#x2F;td&gt;</span><br><span class="line">            &lt;&#x2F;tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">              &lt;td&gt;1,010&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;massa&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;Vestibulum&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;lacinia&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;arcu&lt;&#x2F;td&gt;</span><br><span class="line">            &lt;&#x2F;tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">              &lt;td&gt;1,011&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;eget&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;nulla&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;Class&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;aptent&lt;&#x2F;td&gt;</span><br><span class="line">            &lt;&#x2F;tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">              &lt;td&gt;1,012&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;taciti&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;sociosqu&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;ad&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;litora&lt;&#x2F;td&gt;</span><br><span class="line">            &lt;&#x2F;tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">              &lt;td&gt;1,013&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;torquent&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;per&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;conubia&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;nostra&lt;&#x2F;td&gt;</span><br><span class="line">            &lt;&#x2F;tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">              &lt;td&gt;1,014&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;per&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;inceptos&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;himenaeos&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;Curabitur&lt;&#x2F;td&gt;</span><br><span class="line">            &lt;&#x2F;tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">              &lt;td&gt;1,015&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;sodales&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;ligula&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;in&lt;&#x2F;td&gt;</span><br><span class="line">              &lt;td&gt;libero&lt;&#x2F;td&gt;</span><br><span class="line">            &lt;&#x2F;tr&gt;</span><br><span class="line">          &lt;&#x2F;tbody&gt;</span><br><span class="line">        &lt;&#x2F;table&gt;</span><br><span class="line">      &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;main&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>新增路徑</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;index.js</span><br><span class="line">import Dashboard from &#39;@&#x2F;components&#x2F;pages&#x2F;Dashboard.vue&#39;</span><br><span class="line">  &#123;</span><br><span class="line">    path: &#39;&#x2F;admin&#39;,</span><br><span class="line">    name: &#39;Dashboard&#39;,</span><br><span class="line">    component: Dashboard,</span><br><span class="line">    meta: &#123; requiresAuth: true &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>拆解dashboard.vue元件 新增Navbar.vue和Sidebar.vue 拿掉main裡面的內容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;Navbar.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;nav class&#x3D;&quot;navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow&quot;&gt;</span><br><span class="line">  &lt;a class&#x3D;&quot;navbar-brand col-md-3 col-lg-2 mr-0 px-3&quot; href&#x3D;&quot;#&quot;&gt;Company name&lt;&#x2F;a&gt;</span><br><span class="line">  &lt;button class&#x3D;&quot;navbar-toggler position-absolute d-md-none collapsed&quot; type&#x3D;&quot;button&quot; data-toggle&#x3D;&quot;collapse&quot; data-target&#x3D;&quot;#sidebarMenu&quot; aria-controls&#x3D;&quot;sidebarMenu&quot; aria-expanded&#x3D;&quot;false&quot; aria-label&#x3D;&quot;Toggle navigation&quot;&gt;</span><br><span class="line">    &lt;span class&#x3D;&quot;navbar-toggler-icon&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">  &lt;&#x2F;button&gt;</span><br><span class="line">  &lt;input class&#x3D;&quot;form-control form-control-dark w-100&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Search&quot; aria-label&#x3D;&quot;Search&quot;&gt;</span><br><span class="line">  &lt;ul class&#x3D;&quot;navbar-nav px-3&quot;&gt;</span><br><span class="line">    &lt;li class&#x3D;&quot;nav-item text-nowrap&quot;&gt;</span><br><span class="line">      &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;Sign out&lt;&#x2F;a&gt;</span><br><span class="line">    &lt;&#x2F;li&gt;</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line">&lt;&#x2F;nav&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;Sidebar.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;nav id&#x3D;&quot;sidebarMenu&quot; class&#x3D;&quot;col-md-3 col-lg-2 d-md-block bg-light sidebar collapse&quot;&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;sidebar-sticky pt-3&quot;&gt;</span><br><span class="line">        &lt;ul class&#x3D;&quot;nav flex-column&quot;&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link active&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;home&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Dashboard &lt;span class&#x3D;&quot;sr-only&quot;&gt;(current)&lt;&#x2F;span&gt;</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;file&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Orders</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;shopping-cart&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Products</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;users&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Customers</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;bar-chart-2&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Reports</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;layers&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Integrations</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">        &lt;&#x2F;ul&gt;</span><br><span class="line"></span><br><span class="line">        &lt;h6 class&#x3D;&quot;sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted&quot;&gt;</span><br><span class="line">          &lt;span&gt;Saved reports&lt;&#x2F;span&gt;</span><br><span class="line">          &lt;a class&#x3D;&quot;d-flex align-items-center text-muted&quot; href&#x3D;&quot;#&quot; aria-label&#x3D;&quot;Add a new report&quot;&gt;</span><br><span class="line">            &lt;span data-feather&#x3D;&quot;plus-circle&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">          &lt;&#x2F;a&gt;</span><br><span class="line">        &lt;&#x2F;h6&gt;</span><br><span class="line">        &lt;ul class&#x3D;&quot;nav flex-column mb-2&quot;&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;file-text&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Current month</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;file-text&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Last quarter</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;file-text&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Social engagement</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;file-text&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Year-end sale</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">        &lt;&#x2F;ul&gt;</span><br><span class="line">      &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;nav&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在Dashboard.vue裡載入Navbar和Sidebar元件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;Dashboard.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">&lt;Navbar&gt;&lt;&#x2F;Navbar&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;container-fluid&quot;&gt;</span><br><span class="line">&lt;Sidebar&gt;&lt;&#x2F;Sidebar&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;row&quot;&gt;</span><br><span class="line">    &lt;nav id&#x3D;&quot;sidebarMenu&quot; class&#x3D;&quot;col-md-3 col-lg-2 d-md-block bg-light sidebar collapse&quot;&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;sidebar-sticky pt-3&quot;&gt;</span><br><span class="line">        &lt;ul class&#x3D;&quot;nav flex-column&quot;&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link active&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;home&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Dashboard &lt;span class&#x3D;&quot;sr-only&quot;&gt;(current)&lt;&#x2F;span&gt;</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;file&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Orders</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;shopping-cart&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Products</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;users&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Customers</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;bar-chart-2&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Reports</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;layers&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Integrations</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">        &lt;&#x2F;ul&gt;</span><br><span class="line"></span><br><span class="line">        &lt;h6 class&#x3D;&quot;sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted&quot;&gt;</span><br><span class="line">          &lt;span&gt;Saved reports&lt;&#x2F;span&gt;</span><br><span class="line">          &lt;a class&#x3D;&quot;d-flex align-items-center text-muted&quot; href&#x3D;&quot;#&quot; aria-label&#x3D;&quot;Add a new report&quot;&gt;</span><br><span class="line">            &lt;span data-feather&#x3D;&quot;plus-circle&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">          &lt;&#x2F;a&gt;</span><br><span class="line">        &lt;&#x2F;h6&gt;</span><br><span class="line">        &lt;ul class&#x3D;&quot;nav flex-column mb-2&quot;&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;file-text&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Current month</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;file-text&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Last quarter</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;file-text&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Social engagement</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">            &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">              &lt;span data-feather&#x3D;&quot;file-text&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">              Year-end sale</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">        &lt;&#x2F;ul&gt;</span><br><span class="line">      &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;nav&gt;</span><br><span class="line"></span><br><span class="line">    &lt;main role&#x3D;&quot;main&quot; class&#x3D;&quot;col-md-9 ml-sm-auto col-lg-10 px-md-4&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;&#x2F;main&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import Sidebar from &#39;.&#x2F;Sidebar&#39;</span><br><span class="line">import Navbar from &#39;.&#x2F;Navbar&#39;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    Sidebar,</span><br><span class="line">    Navbar</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>新增Products.vue元件 用巢狀路由</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;Dashboard.vue</span><br><span class="line">    &lt;main role&#x3D;&quot;main&quot; class&#x3D;&quot;col-md-9 ml-sm-auto col-lg-10 px-md-4&quot;&gt;</span><br><span class="line">        &lt;router-view&gt;&lt;&#x2F;router-view&gt;</span><br><span class="line">    &lt;&#x2F;main&gt;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;index.js</span><br><span class="line">import Products from &#39;@&#x2F;components&#x2F;pages&#x2F;Products.vue&#39;</span><br><span class="line"></span><br><span class="line">  &#123;</span><br><span class="line">    path: &#39;&#x2F;admin&#39;,</span><br><span class="line">    name: &#39;Dashboard&#39;,</span><br><span class="line">    component: Dashboard,</span><br><span class="line">    children: [</span><br><span class="line">      &#123;</span><br><span class="line">        path: &#39;products&#39;,</span><br><span class="line">        name: &#39;Products&#39;,</span><br><span class="line">        component: Products,</span><br><span class="line">        meta: &#123; requiresAuth: true &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>更改login.vue 登入後的路徑</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;    vm.$router.push(&#39;&#x2F;admin&#x2F;products&#39;)</span><br><span class="line">methods: &#123;</span><br><span class="line">  signin () &#123;</span><br><span class="line">    const api &#x3D; &#96;$&#123;process.env.VUE_APP_API&#125;&#x2F;admin&#x2F;signin&#96;</span><br><span class="line">    const vm &#x3D; this</span><br><span class="line">    this.$http.post(api, vm.user).then((response) &#x3D;&gt; &#123;</span><br><span class="line">      console.log(response.data)</span><br><span class="line">      if (response.data.success) &#123;</span><br><span class="line">        vm.$router.push(&#39;&#x2F;admin&#x2F;products&#39;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>新增products.vue取得產品的api 並且刪掉app.vue取得產品的api</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">  getProducts () &#123;</span><br><span class="line">    const api &#x3D; &#96;$&#123;process.env.VUE_APP_API&#125;&#x2F;api&#x2F;$&#123;process.env.VUE_APP_CUSTOM_PATH&#125;&#x2F;admin&#x2F;products&#96;</span><br><span class="line">    this.$http.get(api).then((response) &#x3D;&gt; &#123;</span><br><span class="line">      console.log(response.data)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">created () &#123;</span><br><span class="line">  this.getProducts()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果在products.vue出現驗證錯誤</p>
+<p>可參考<a href="https://www.udemy.com/course/vue-hexschool/learn/lecture/10896718#questions/9568194/" target="_blank" rel="noopener">連結文</a></p>
+<p>再補上 版面內容(可參考commit)</p>
+<h3 id="新增-修改-產品會跳出modal"><a href="#新增-修改-產品會跳出modal" class="headerlink" title="新增/修改 產品會跳出modal"></a>新增/修改 產品會跳出modal</h3><p>載入bootstrap套件 </p>
+<p>npm 安裝 popper.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save popper.js</span><br></pre></td></tr></table></figure>
+
+<p>main.js寫入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#39;bootstrap&#39;</span><br></pre></td></tr></table></figure>
+
+<p>下載bs的modal做使用, 開啟方式為確認遠端資料有撈回再開啟modal</p>
+<p>bootstrap/modal/Usage/Methods裡有介紹.modal(‘show’)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;products.vue</span><br><span class="line">&lt;button class&#x3D;&quot;btn btn-primary&quot; @click&#x3D;&quot;openModal&quot;&gt;建立新的產品&lt;&#x2F;button&gt;</span><br><span class="line"></span><br><span class="line">methods: &#123;</span><br><span class="line">    openModal () &#123;</span><br><span class="line">      $(&#39;#productModal&#39;).modal(&#39;show&#39;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<h3 id="新增產品的功能"><a href="#新增產品的功能" class="headerlink" title="新增產品的功能"></a>新增產品的功能</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">@click&#x3D;&quot;openModal&quot;</span><br><span class="line"></span><br><span class="line">  data () &#123;</span><br><span class="line">   return &#123;</span><br><span class="line">     products: [],</span><br><span class="line">     tempProduct: &#123;&#125;,</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;,</span><br><span class="line"></span><br><span class="line">openModal () &#123;</span><br><span class="line">  $(&#39;#productModal&#39;).modal(&#39;show&#39;)</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">updatProduct () &#123;</span><br><span class="line">     const api &#x3D; &#96;$&#123;process.env.VUE_APP_API&#125;&#x2F;api&#x2F;$&#123;process.env.VUE_APP_CUSTOM_PATH&#125;&#x2F;admin&#x2F;product&#96;</span><br><span class="line">     const vm &#x3D; this</span><br><span class="line">     this.$http.post(api, &#123; data: vm.tempProduct &#125;).then((response) &#x3D;&gt; &#123;</span><br><span class="line">       console.log(response.data)</span><br><span class="line">       if (response.data.success) &#123;</span><br><span class="line">         $(&#39;#productModal&#39;).modal(&#39;hide&#39;)</span><br><span class="line">         vm.getProducts()</span><br><span class="line">       &#125; else &#123;</span><br><span class="line">         $(&#39;#productModal&#39;).modal(&#39;hide&#39;)</span><br><span class="line">         vm.getProducts()</span><br><span class="line">         console.log(&#39;新增失敗&#39;)</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改產品的功能"><a href="#修改產品的功能" class="headerlink" title="修改產品的功能"></a>修改產品的功能</h3><p>因為物件傳參考的特性, 所以要改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;新增</span><br><span class="line">    &lt;div class&#x3D;&quot;text-right mt-4&quot;&gt;</span><br><span class="line">      &lt;button class&#x3D;&quot;btn btn-primary&quot; @click&#x3D;&quot;openModal(true)&quot;&gt;建立新的產品&lt;&#x2F;button&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&#x2F;&#x2F;編輯</span><br><span class="line">          &lt;td&gt;</span><br><span class="line">            &lt;button class&#x3D;&quot;btn btn-outline-primary btn-sm&quot; @click&#x3D;&quot;openModal(false, item)&quot;&gt;編輯&lt;&#x2F;button&gt;</span><br><span class="line">          &lt;&#x2F;td&gt;</span><br><span class="line">          </span><br><span class="line">  data () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      isNew: false</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#x2F;&#x2F;方法</span><br><span class="line">    openModal (isNew, item) &#123;</span><br><span class="line">      if (isNew) &#123;</span><br><span class="line">        this.tempProduct &#x3D; &#123;&#125;</span><br><span class="line">        this.isNew &#x3D; true</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        this.tempProduct &#x3D; Object.assign(&#123;&#125;, item)</span><br><span class="line">        this.isNew &#x3D; false</span><br><span class="line">      &#125;</span><br><span class="line">      $(&#39;#productModal&#39;).modal(&#39;show&#39;)</span><br><span class="line">    &#125;,</span><br><span class="line">    </span><br><span class="line">        updatProduct () &#123;</span><br><span class="line">      let api &#x3D; &#96;$&#123;process.env.VUE_APP_API&#125;&#x2F;api&#x2F;$&#123;process.env.VUE_APP_CUSTOM_PATH&#125;&#x2F;admin&#x2F;product&#96;</span><br><span class="line">      let httpMethod &#x3D; &#39;post&#39;</span><br><span class="line">      const vm &#x3D; this</span><br><span class="line">      if (!vm.isNew) &#123;</span><br><span class="line">        api &#x3D; &#96;$&#123;process.env.VUE_APP_API&#125;&#x2F;api&#x2F;$&#123;process.env.VUE_APP_CUSTOM_PATH&#125;&#x2F;admin&#x2F;product&#x2F;$&#123;vm.tempProduct.id&#125;&#96;</span><br><span class="line">        httpMethod &#x3D; &#39;put&#39;</span><br><span class="line">      &#125;</span><br><span class="line">      this.$http[httpMethod](api, &#123; data: vm.tempProduct &#125;).then((response) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(response.data)</span><br><span class="line">        if (response.data.success) &#123;</span><br><span class="line">          $(&#39;#productModal&#39;).modal(&#39;hide&#39;)</span><br><span class="line">          vm.getProducts()</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">          $(&#39;#productModal&#39;).modal(&#39;hide&#39;)</span><br><span class="line">          vm.getProducts()</span><br><span class="line">          console.log(&#39;新增失敗&#39;)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="上傳圖片"><a href="#上傳圖片" class="headerlink" title="上傳圖片"></a>上傳圖片</h3><p>使用formdata做傳送</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;form-group&quot;&gt;</span><br><span class="line">              &lt;label for&#x3D;&quot;customFile&quot;&gt;或 上傳圖片</span><br><span class="line">                &lt;i class&#x3D;&quot;fas fa-spinner fa-spin&quot;&gt;&lt;&#x2F;i&gt;</span><br><span class="line">              &lt;&#x2F;label&gt;</span><br><span class="line">              &lt;input type&#x3D;&quot;file&quot; id&#x3D;&quot;customFile&quot; class&#x3D;&quot;form-control&quot;</span><br><span class="line">                @change&#x3D;&quot;uploadFile&quot;</span><br><span class="line">                ref&#x3D;&quot;files&quot;&gt;</span><br><span class="line">            &lt;&#x2F;div&gt;</span><br><span class="line">            &lt;img img&#x3D;&quot;https:&#x2F;&#x2F;images.unsplash.com&#x2F;photo-1483985988355-763728e1935b?ixlib&#x3D;rb-0.3.5&amp;ixid&#x3D;eyJhcHBfaWQiOjEyMDd9&amp;s&#x3D;828346ed697837ce808cae68d3ddc3cf&amp;auto&#x3D;format&amp;fit&#x3D;crop&amp;w&#x3D;1350&amp;q&#x3D;80&quot;</span><br><span class="line">              class&#x3D;&quot;img-fluid&quot;</span><br><span class="line">              :src&#x3D;&quot;tempProduct.imageUrl&quot;</span><br><span class="line">              alt&#x3D;&quot;&quot;&gt;</span><br><span class="line">          &lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">uploadFile () &#123;</span><br><span class="line">      const uploadFile &#x3D; this.$refs.files.files[0]</span><br><span class="line">      const vm &#x3D; this</span><br><span class="line">      const formData &#x3D; new FormData()</span><br><span class="line">      formData.append(&#39;file-to-upload&#39;, uploadFile)</span><br><span class="line">      const url &#x3D; &#96;$&#123;process.env.VUE_APP_API&#125;&#x2F;api&#x2F;$&#123;process.env.VUE_APP_CUSTOM_PATH&#125;&#x2F;admin&#x2F;upload&#96;</span><br><span class="line">      this.$http.post(url, formData, &#123;</span><br><span class="line">        headers: &#123;</span><br><span class="line">          &#39;Content-Type&#39;: &#39;multipart&#x2F;form-data&#39;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;).then((response) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(response.data)</span><br><span class="line">        if (response.data.success) &#123;</span><br><span class="line">          vm.$set(vm.tempProduct, &#39;imageUrl&#39;, response.data.imageUrl) &#x2F;&#x2F; 強制寫入</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# ebooks&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin https:&#x2F;&#x2F;github.com&#x2F;yachuchang102&#x2F;ebooks.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/resume/tags/%E7%A8%8B%E5%BC%8F%E7%AD%86%E8%A8%98/" rel="tag"># 程式筆記</a>
+              <a href="/resume/tags/Vue/" rel="tag"># Vue</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/resume/2020/05/17/codenote-ecommerce/" rel="prev" title="codenote-ecommerce">
+      <i class="fa fa-chevron-left"></i> codenote-ecommerce
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/resume/2020/05/30/codenote_vue_02/" rel="next" title="前端練習-電商網站02">
+      前端練習-電商網站02 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#製作登入頁面"><span class="nav-number">1.</span> <span class="nav-text">製作登入頁面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#串接login-api"><span class="nav-number">1.1.</span> <span class="nav-text">串接login api</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#套用bootstrap-版型"><span class="nav-number">2.</span> <span class="nav-text">套用bootstrap 版型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新增-修改-產品會跳出modal"><span class="nav-number">3.</span> <span class="nav-text">新增&#x2F;修改 產品會跳出modal</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新增產品的功能"><span class="nav-number">4.</span> <span class="nav-text">新增產品的功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改產品的功能"><span class="nav-number">5.</span> <span class="nav-text">修改產品的功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上傳圖片"><span class="nav-number">6.</span> <span class="nav-text">上傳圖片</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">YC</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+
+
+   <div class="feed-link motion-element">
+     <a href="/resume/atom.xml" rel="alternate">
+       <i class="fa fa-rss"></i>
+       RSS
+     </a>
+   </div>
+ 
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/resume/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/resume/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/resume/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:yachuchang102@gmail.com" title="E-Mail → mailto:yachuchang102@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-crow"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YC</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/resume/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/resume/lib/velocity/velocity.min.js"></script>
+  <script src="/resume/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/resume/js/utils.js"></script>
+
+<script src="/resume/js/motion.js"></script>
+
+
+<script src="/resume/js/schemes/pisces.js"></script>
+
+
+<script src="/resume/js/next-boot.js"></script>
+
+
+  <script defer src="/resume/lib/three/three.min.js"></script>
+    <script defer src="/resume/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/resume/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
